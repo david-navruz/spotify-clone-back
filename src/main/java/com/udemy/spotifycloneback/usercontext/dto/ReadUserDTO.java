@@ -1,4 +1,4 @@
 package com.udemy.spotifycloneback.usercontext.dto;
 
-public class ReadUserDTO {
+public record ReadUserDTO(String firstName, String lastName, String email, String imageUrl) {
 }

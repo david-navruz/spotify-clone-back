@@ -106,7 +106,7 @@ public class UserService {
 
     public Optional<ReadUserDTO> getByEmail(String email) {
         Optional<User> oneByEmail = userRepository.findOneByEmail(email);
-        return oneByEmail.map(userMapper::readUserDTOToUser);
+        return oneByEmail.map(userMapper::userToReadUserDTO);
     }
 
     public boolean isAuthenticated() {

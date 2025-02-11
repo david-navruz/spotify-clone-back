@@ -11,7 +11,6 @@ import lombok.Setter;
 @Table(name = "spotify_user")
 public class User extends AbstractAuditingEntity<Long> {
 
-
         @Id
         @Column(name = "id")
         @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userSequenceGenerator")
@@ -31,7 +30,5 @@ public class User extends AbstractAuditingEntity<Long> {
         private String imageUrl;
 
         private Subscription subscription = Subscription.FREE;
-
-
 
 }
