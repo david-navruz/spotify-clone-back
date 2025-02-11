@@ -39,10 +39,16 @@ spring:
       enabled: true
       max-file-size: 100MB
       max-request-size: 100MB
+  security:
+    oauth2:
+      client:
+        provider:
+          okta:
+            issuer-uri: https://dev-aoem2zhhrgr1yl6i.us.auth0.com/
+        registration:
+          okta:
+            client-id: ${auth0_client_id}
+            client-secret: ${auth0_client_secret}
+            scope: openid, profile, email
 server:
   port: 8080
-okta:
-  oauth2:
-    issuer: https://dev-aoem2zhhrgr1yl6i.us.auth0.com
-    client-id: ${auth0_client_id}
-    client-secret: ${auth0_client_secret}

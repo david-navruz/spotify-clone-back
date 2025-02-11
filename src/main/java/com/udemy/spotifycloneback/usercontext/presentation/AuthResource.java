@@ -3,6 +3,7 @@ package com.udemy.spotifycloneback.usercontext.presentation;
 import com.udemy.spotifycloneback.usercontext.application.UserService;
 import com.udemy.spotifycloneback.usercontext.dto.ReadUserDTO;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,12 +27,15 @@ public class AuthResource {
 
     private final ClientRegistration registration;
 
+    private final ClientRegistrationRepository registrations;
 
-    public AuthResource(UserService userService, ClientRegistrationRepository registration) {
+
+    public AuthResource(UserService userService,
+                        ClientRegistrationRepository registrations) {
         this.userService = userService;
-        this.registration = registration.findByRegistrationId("okta");
+        this.registration = registrations.findByRegistrationId("okta");
+        this.registrations = registrations;
     }
-
 
     @GetMapping("/get-authenticated-user")
     public ResponseEntity<ReadUserDTO> getAuthenticatedUser(@AuthenticationPrincipal OAuth2User user) {
