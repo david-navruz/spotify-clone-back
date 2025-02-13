@@ -30,11 +30,11 @@ public class Song implements Serializable {
     @Column(name = "author", nullable = false)
     private String author;
 
+    @Lob // large object
     @Column(name = "cover", nullable = false)
-    private String cover;
+    private byte[] cover;
 
     @Column(name = "cover_content_type", nullable = false)
     private String coverContentType;
-
 
 }
