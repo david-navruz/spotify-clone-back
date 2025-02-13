@@ -1,9 +1,8 @@
 package com.udemy.spotifycloneback.usercontext.presentation;
 
 import com.udemy.spotifycloneback.usercontext.application.UserService;
-import com.udemy.spotifycloneback.usercontext.dto.ReadUserDTO;
+import com.udemy.spotifycloneback.usercontext.application.dto.ReadUserDTO;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

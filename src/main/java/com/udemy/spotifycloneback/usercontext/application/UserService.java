@@ -1,10 +1,9 @@
 package com.udemy.spotifycloneback.usercontext.application;
 
 import com.udemy.spotifycloneback.usercontext.domain.User;
-import com.udemy.spotifycloneback.usercontext.dto.ReadUserDTO;
+import com.udemy.spotifycloneback.usercontext.application.dto.ReadUserDTO;
 import com.udemy.spotifycloneback.usercontext.mapper.UserMapper;
 import com.udemy.spotifycloneback.usercontext.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
