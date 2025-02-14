@@ -18,7 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Transactional
 @Service
@@ -79,15 +78,13 @@ public class SongService {
         return allSongs;
     }
 
-
-/*    public Optional<SongContentDTO> getOneByPublicId(UUID publicId) {
-        Optional<SongContentDTO> songPublicId = songContentRepository.
-
-
-    }*/
-
-
-
+    public Optional<SongContentDTO> getOneByPublicId(UUID publicId) {
+        Optional<SongContent> songContent = songContentRepository.findOneBySongPublicId(publicId);
+            if (songContent.isPresent()) {
+                return songContent.map(songContentMapper::songContentToSongContentDTO);
+            }
+        return Optional.empty();
+    }
 
 
 

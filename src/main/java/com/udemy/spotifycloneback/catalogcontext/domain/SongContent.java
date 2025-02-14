@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class SongContent implements Serializable {
 
     /**
-        song_id column in SongContent is both a primary key and a foreign key.
+     * song_id column in SongContent is both a primary key and a foreign key.
      */
     @Id
     @Column(name = "song_id")
@@ -40,6 +40,5 @@ public class SongContent implements Serializable {
 
     @Column(name = "file_content_type")
     private String fileContentType;
-
-
+    
 }

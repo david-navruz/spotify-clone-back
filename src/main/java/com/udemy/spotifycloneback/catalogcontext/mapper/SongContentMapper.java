@@ -2,7 +2,6 @@ package com.udemy.spotifycloneback.catalogcontext.mapper;
 
 import com.udemy.spotifycloneback.catalogcontext.application.dto.SaveSongDTO;
 import com.udemy.spotifycloneback.catalogcontext.application.dto.SongContentDTO;
-import com.udemy.spotifycloneback.catalogcontext.domain.Song;
 import com.udemy.spotifycloneback.catalogcontext.domain.SongContent;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -11,7 +10,7 @@ import org.mapstruct.Mapping;
 public interface SongContentMapper {
 
     @Mapping(source = "song.publicId", target = "publicId")
-    SongContentDTO songContentToSongContentDTO(Song song);
+    SongContentDTO songContentToSongContentDTO(SongContent songContent);
 
     SongContent saveSongDTOToSong(SaveSongDTO songDTO);
 
